@@ -17,7 +17,7 @@
 mod_score_ui <- function(id){
   ns <- NS(id)
   
-  df <- readRDS(system.file("./inst/app/data/df_score_jour-2018_2019", package = "sia"))
+  df <- readRDS(system.file("app/data/df_score_jour-2018_2019", package = "sia"))
   
   argonTabItem(
     tabName = "score",
@@ -72,7 +72,7 @@ mod_score_server <- function(input, output, session){
   local <- reactiveValues()
   
   # Get data
-  df_merged <- readRDS(system.file("./inst/app/data/df_score_jour-2018_2019", package = "sia"))
+  df_merged <- readRDS(system.file("app/data/df_score_jour-2018_2019", package = "sia"))
   
   MIN <- min(df_merged$pdm, na.rm = T)
   MAX <- max(df_merged$pdm, na.rm = T)
